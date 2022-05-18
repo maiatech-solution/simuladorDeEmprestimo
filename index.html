@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="estilo.css">
     <title>Simulador</title>
 </head>
+
 <body>
     <div class="container">
         <div id="title">
@@ -23,49 +25,64 @@
             </div>
             <div class="form-group">
                 <Label for="lucro">Porcentagem de lucro: </Label>
-                <input type="text" name="lucro" id="lucro" value="" readonly>
+                <span id="lucro"></span>
             </div>
             <div class="form-group">
                 <Label for="mes">Valor a pagar por mês: </Label>
-                <input type="text" name="mes" id="mes" value="" readonly>
+                <span id="mes"></span>
             </div>
             <div class="form-group">
                 <Label for="total" id="totalpago">Total a ser pago: </Label>
-                <input type="text" name="total" id="total" value="" readonly>
+                <span id="total"></span>
             </div>
         </div>
     </div>
 
     <script>
-        function simulador(){
+        function simulador() {
 
             var emprestimo = document.getElementById("emprestimo");
-            emprestimo.addEventListener("change",function(){
-                const emprestimoValor = document.getElementById("emprestimo").value
-                console.log(emprestimoValor);
+            emprestimo.addEventListener("change", function () {
+                var emprestimoValor = document.getElementById("emprestimo").value
+                console.log("Emprestimo valor: "+ emprestimoValor);
             });
-    
+
             var quantidade = document.getElementById("quantidade");
-            quantidade.addEventListener("change",function(){
+            quantidade.addEventListener("change", function () {
                 var quantidadeValor = document.getElementById("quantidade").value
-                console.log(quantidadeValor);
+                console.log("Quantidade valor: " +quantidadeValor);
 
                 var lucro = document.getElementById("lucro");
-                if(quantidadeValor <= 1){
-                    document.getElementById("lucro").value = 20;
+                if (quantidadeValor <= 1) {
+                    var lucroPercentual = 20
+                    document.querySelector("span[id=lucro]").innerHTML = `${lucroPercentual} %`;
+                    console.log(` lucro percentual: ${lucroPercentual}`);
+                }
+                if (quantidadeValor > 1 && quantidadeValor <= 5) {
+                    document.querySelector("span[id=lucro]").innerHTML = `30%`;
                     console.log(lucro);
                 }
-                if(quantidadeValor > 1 && quantidadeValor <= 5){
-                    document.getElementById("lucro").value = 30;
+                if (quantidadeValor > 5 && quantidadeValor <= 8) {
+                    document.querySelector("span[id=lucro]").innerHTML = `40%`;
                     console.log(lucro);
                 }
-
+                if (quantidadeValor > 8 && quantidadeValor <= 12) {
+                    document.querySelector("span[id=lucro]").innerHTML = `50%`;
+                    console.log(lucro);
+                }
+                if (quantidadeValor > 12) {
+                    document.querySelector("span[id=lucro]").innerHTML = `70%`;
+                    console.log(lucro);
+                }
+                var totalAPagar = emprestimoValor/100*lucroPercentual
+                document.querySelector("span[id=total]").innerHTML = `(${totalAPagar}`;
             });
-    
+
         }
 
         simulador();
 
     </script>
 </body>
+
 </html>
