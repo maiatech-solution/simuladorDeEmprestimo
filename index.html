@@ -100,16 +100,18 @@
             });
 
         }
+       
+        function atualizar(){
+            var btn = document.querySelector("#simulacao");
+    
+            btn.addEventListener("click", function () {
+                location.reload();
+    
+            });
+        }
 
         simulador();
-
-        var btn = document.querySelector("#simulacao");
-
-        btn.addEventListener("click", function () {
-
-            location.reload();
-
-        });
+        atualizar();
 
     </script>
 </body>
