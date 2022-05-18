@@ -81,6 +81,20 @@ body{
     color: rgb(3, 88, 3);
 }
 
+#simulacao{
+    width: auto;
+    padding: 10px;
+    background-color: rgb(24, 24, 24);
+    outline: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    border-radius: 6px;
+}
+
+#simulacao:hover{
+    background-color: rgb(34, 34, 34);
+}
+
 @media screen and (min-width: 320px) {
     .container {
         width: 100%;
