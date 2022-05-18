@@ -91,11 +91,11 @@
                 }
 
                 var totalAPagar = ((parseInt(emprestimoValor)/100*lucroPercentual)) + parseInt(emprestimoValor);
-                document.querySelector("span[id=total]").innerHTML = `${totalAPagar}`;
+                document.querySelector("span[id=total]").innerHTML = `${totalAPagar.toFixed(2).replace(".",",")}`;
                 console.log("Total "+ totalAPagar)
                 
                 var mes = totalAPagar/quantidadeValor;
-                document.querySelector("span[id=mes]").innerHTML = `${mes}`;
+                document.querySelector("span[id=mes]").innerHTML = `${mes.toFixed(2).replace(".",",")}`;
                 console.log("valor por mes " + mes );
             });
 
