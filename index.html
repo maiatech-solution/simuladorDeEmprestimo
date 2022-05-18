@@ -42,8 +42,9 @@
         function simulador() {
 
             var emprestimo = document.getElementById("emprestimo");
+            var emprestimoValor
             emprestimo.addEventListener("change", function () {
-                var emprestimoValor = document.getElementById("emprestimo").value
+                emprestimoValor = document.getElementById("emprestimo").value
                 console.log("Emprestimo valor: "+ emprestimoValor);
             });
 
@@ -54,28 +55,32 @@
 
                 var lucro = document.getElementById("lucro");
                 if (quantidadeValor <= 1) {
-                    var lucroPercentual = 20
+                    var lucroPercentual = 20;
                     document.querySelector("span[id=lucro]").innerHTML = `${lucroPercentual} %`;
                     console.log(` lucro percentual: ${lucroPercentual}`);
                 }
                 if (quantidadeValor > 1 && quantidadeValor <= 5) {
-                    document.querySelector("span[id=lucro]").innerHTML = `30%`;
-                    console.log(lucro);
+                    var lucroPercentual = 30;
+                    document.querySelector("span[id=lucro]").innerHTML = `${lucroPercentual} %`;
+                    console.log(` lucro percentual: ${lucroPercentual}`);
                 }
                 if (quantidadeValor > 5 && quantidadeValor <= 8) {
-                    document.querySelector("span[id=lucro]").innerHTML = `40%`;
-                    console.log(lucro);
+                    var lucroPercentual = 40;
+                    document.querySelector("span[id=lucro]").innerHTML = `${lucroPercentual} %`;
+                    console.log(` lucro percentual: ${lucroPercentual}`);
                 }
-                if (quantidadeValor > 8 && quantidadeValor <= 12) {
-                    document.querySelector("span[id=lucro]").innerHTML = `50%`;
-                    console.log(lucro);
+                if (quantidadeValor > 8 && quantidadeValor <=12) {
+                    var lucroPercentual = 50;
+                    document.querySelector("span[id=lucro]").innerHTML = `${lucroPercentual} %`;
+                    console.log(` lucro percentual: ${lucroPercentual}`);
                 }
                 if (quantidadeValor > 12) {
-                    document.querySelector("span[id=lucro]").innerHTML = `70%`;
-                    console.log(lucro);
+                    var lucroPercentual = 70;
+                    document.querySelector("span[id=lucro]").innerHTML = `${lucroPercentual} %`;
+                    console.log(` lucro percentual: ${lucroPercentual}`);
                 }
-                var totalAPagar = emprestimoValor/100*lucroPercentual
-                document.querySelector("span[id=total]").innerHTML = `(${totalAPagar}`;
+                var totalAPagar = ((parseInt(emprestimoValor)/100*lucroPercentual)) + parseInt(emprestimoValor);
+                document.querySelector("span[id=total]").innerHTML = `${totalAPagar}`;
             });
 
         }
