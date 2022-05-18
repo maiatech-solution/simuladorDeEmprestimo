@@ -43,6 +43,10 @@
         </div>
     </div>
 
+    <footer>
+        &copy; Maiatech Solution.
+    </footer>
+
     <script>
         function simulador() {
 
@@ -98,6 +102,14 @@
         }
 
         simulador();
+
+        var btn = document.querySelector("#simulacao");
+
+        btn.addEventListener("click", function () {
+
+            location.reload();
+
+        });
 
     </script>
 </body>
