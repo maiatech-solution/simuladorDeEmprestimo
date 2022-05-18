@@ -59,7 +59,7 @@ body{
     width: 50px;
     height: 40px;
     border-radius: 15px;
-    font: 20px;
+    font-size: 20px;
     border: none;
     padding: 5px;
     font-weight: bold;
@@ -81,3 +81,38 @@ body{
     color: rgb(3, 88, 3);
 }
 
+@media screen and (min-width: 320px) {
+    .container {
+        width: 100%;
+        border: none;
+        height: 100%;
+    }
+    
+    h1 {
+        font-size: 25px;
+    }
+    .form-group input{
+        font-size: 14px;
+    }
+    .form-group label {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 35px;
+    }
+    .form-group {
+        height: 35px;
+    }
+    .form-group label {
+        font-size: 30px;
+    }
+    .form-group input {
+        width: 100px;
+    }
+    .form-group span {
+        font-size: 25px;
+    }
+}
