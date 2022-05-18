@@ -49,6 +49,7 @@
             });
 
             var quantidade = document.getElementById("quantidade");
+            console.log("Quantidade "+ quantidade)
             quantidade.addEventListener("change", function () {
                 var quantidadeValor = document.getElementById("quantidade").value
                 console.log("Quantidade valor: " +quantidadeValor);
@@ -79,8 +80,14 @@
                     document.querySelector("span[id=lucro]").innerHTML = `${lucroPercentual} %`;
                     console.log(` lucro percentual: ${lucroPercentual}`);
                 }
+
                 var totalAPagar = ((parseInt(emprestimoValor)/100*lucroPercentual)) + parseInt(emprestimoValor);
                 document.querySelector("span[id=total]").innerHTML = `${totalAPagar}`;
+                console.log("Total "+ totalAPagar)
+                
+                var mes = totalAPagar/quantidadeValor;
+                document.querySelector("span[id=mes]").innerHTML = `${mes}`;
+                console.log("valor por mes " + mes );
             });
 
         }
